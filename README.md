@@ -32,7 +32,7 @@ If using the JVM version of phoenixd:
 2. install Python modules
 ```sh
 python3 -m pip install --upgrade pip
-python3 -m pip install qrcode asyncio esdk-obs-python websockets
+python3 -m pip install qrcode asyncio esdk-obs-python websockets Pillow
 ```
 
 ### Setup OBS Studio
