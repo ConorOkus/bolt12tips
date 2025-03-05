@@ -2,7 +2,9 @@
 # Bolt12tips
 
 ![Example video](docs/youiste-bolt12-example.png)
-[Example Video](https://www.twitch.tv/youiste/clip/FitBoredTrayTwitchRaid-zMb3RQSmvvcUmuby)
+[Example Video](https://youtu.be/Slkb3jUYo4o)
+
+[Setting Up Bitcoin Tips for Streamers Video (by Conor Okus)](https://youtu.be/IWTpSN8IaLE?feature=shared)
 
 This project demonstrates how to instantly receive a notification when you receive [Bitcoin](https://bitcoin.org/) tips while streaming using Lightning Bolt-12 payment codes.
 
