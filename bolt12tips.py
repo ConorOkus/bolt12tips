@@ -17,7 +17,7 @@ def script_properties():
     props = obs.obs_properties_create()
     
     # password can be found in .phoenix/phoenix.conf
-    obs.obs_properties_add_text(props, 'password', 'http-password-limited-access:', obs.OBS_TEXT_DEFAULT)
+    obs.obs_properties_add_text(props, 'password', 'http-password:', obs.OBS_TEXT_DEFAULT)
     
     # shown when you run phoenix
     obs.obs_properties_add_text(props, 'lno', 'bolt-12 offer:', obs.OBS_TEXT_DEFAULT)
@@ -32,7 +32,7 @@ def update_settings(settings):
     data = settings
     password = obs.obs_data_get_string(data, 'password')
     lno = obs.obs_data_get_string(data, 'lno')
-    uri = f"ws://a:{password}@127.0.0.1:9740/websocket"
+    uri = f"wss://a:{password}@phoenixd-43js.nodana.app:9740/websocket"
     qr = f"bitcoin:?lno={lno}"
     # save qr code to png file
     bolt12qrcode = qrcode.make(qr)
