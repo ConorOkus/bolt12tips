@@ -32,7 +32,7 @@ def update_settings(settings):
     data = settings
     password = obs.obs_data_get_string(data, 'password')
     lno = obs.obs_data_get_string(data, 'lno')
-    uri = f"wss://a:{password}@phoenixd-43js.nodana.app:9740/websocket"
+    uri = f"wss://a:{password}@phoenixd-dhpg.nodana.app:9740/websocket"
     qr = f"bitcoin:?lno={lno}"
     # save qr code to png file
     bolt12qrcode = qrcode.make(qr)
