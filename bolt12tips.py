@@ -9,8 +9,8 @@ from typing import Optional
 import threading
 
 def script_description():
-  return """<center><h2>Bolt-12 Tips!!</h2></center>
-            <p>When you receive a <em>Bolt-12</em> tip the cat takes them and shows you the note.</p>"""
+  return """<center><h2>Bolt12 Tips</h2></center>
+            <p>When you receive a <em>Bolt-12</em> tip the bitcoin gif appears!</p>"""
 
 def script_properties():
 	# Create a Property Set object
@@ -84,10 +84,13 @@ async def listen():
             async for message in websocket:
                 data = json.loads(message)
                 print(f"Received: {message}")
-                cat_item = get_sceneitem_from_source_name_in_current_scene("cat")
+                bitty_item = get_sceneitem_from_source_name_in_current_scene("bitty")
+                gif_item = get_sceneitem_from_source_name_in_current_scene("gif")
                 amount_note_item = get_sceneitem_from_source_name_in_current_scene("received")
-                if cat_item is not None:
-                    obs.obs_sceneitem_set_visible(cat_item, True)
+                if gif_item is not None:
+                    obs.obs_sceneitem_set_visible(gif_item, True)
+                if bitty_item is not None:
+                    obs.obs_sceneitem_set_visible(bitty_item, True)
                 amount_note_item = get_sceneitem_from_source_name_in_current_scene("received")
                 if amount_note_item is not None:
                     obs.obs_sceneitem_set_visible(amount_note_item, True)
@@ -102,8 +105,10 @@ async def listen():
                         obs.obs_data_release(settings)
                 play_sound("game-start-6104.mp3")
                 await asyncio.sleep(5)
-                if cat_item is not None:
-                    obs.obs_sceneitem_set_visible(cat_item, False)
+                if gif_item is not None:
+                    obs.obs_sceneitem_set_visible(gif_item, False)
+                if bitty_item is not None:
+                    obs.obs_sceneitem_set_visible(bitty_item, False)
                 amount_note_item = get_sceneitem_from_source_name_in_current_scene("received")
                 if amount_note_item is not None:
                     obs.obs_sceneitem_set_visible(amount_note_item, False)
